@@ -11,8 +11,6 @@ def process_image(file:UploadFile = File(...), operations:str = Form(...)):
     
     operations = json.loads(operations)
 
-    print(operations)
-
     task = image_processing_task.delay(10, 20)
 
     return {
@@ -21,3 +19,4 @@ def process_image(file:UploadFile = File(...), operations:str = Form(...)):
         "message": "Image processing started",
         "created_at": "2026-06-21T16:30:00Z"
     }
+

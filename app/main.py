@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import process
+from app.routers import process, tasks
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Image processing API")
@@ -18,3 +18,4 @@ app.add_middleware(
 )
 
 app.include_router(process.router)
+app.include_router(tasks.router)
