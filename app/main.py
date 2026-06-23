@@ -1,8 +1,17 @@
 from fastapi import FastAPI
-from app.routers import process, tasks
+from app.routers import process, tasks, download
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+
 
 app = FastAPI(title="Image processing API")
+
+app.mount(
+    "/static",
+    StaticFiles(directory="static"),
+    name="static"
+)
+from fastapi.staticfiles import StaticFiles
 
 origins = [
     "http://127.0.0.1:5500",
@@ -19,3 +28,4 @@ app.add_middleware(
 
 app.include_router(process.router)
 app.include_router(tasks.router)
+app.include_router(download.router)
