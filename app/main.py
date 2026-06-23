@@ -14,8 +14,8 @@ app.mount(
 from fastapi.staticfiles import StaticFiles
 
 origins = [
-    "http://127.0.0.1:5500",
-    "http://localhost:8080",
+
+     "https://image-process-frontend.vercel.app/",
 ]
 
 app.add_middleware(
