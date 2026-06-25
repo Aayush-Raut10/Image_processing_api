@@ -16,6 +16,7 @@ from fastapi.staticfiles import StaticFiles
 origins = [
 
      "https://image-process-frontend.vercel.app",
+     "http://127.0.0.1:5500",
 ]
 
 app.add_middleware(
